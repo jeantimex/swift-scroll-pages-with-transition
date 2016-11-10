@@ -12,6 +12,8 @@
 		0A1E8EBF1DD43CE000FAE74B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E8EBE1DD43CE000FAE74B /* Assets.xcassets */; };
 		0A1E8EC21DD43CE000FAE74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E8EC01DD43CE000FAE74B /* LaunchScreen.storyboard */; };
 		0A1E8ECA1DD4440F00FAE74B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E8EC91DD4440F00FAE74B /* Extensions.swift */; };
+		0A1E8ECC1DD52B2000FAE74B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E8ECB1DD52B2000FAE74B /* ContentViewController.swift */; };
+		0A1E8ECE1DD5314200FAE74B /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E8ECD1DD5314200FAE74B /* CustomPageViewController.swift */; };
 		4CBC491CD024F7604CF83185 /* Pods_swift_scroll_pages_with_transition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4119200BDB901F73D703E0 /* Pods_swift_scroll_pages_with_transition.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		0A1E8EC11DD43CE000FAE74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1E8EC31DD43CE000FAE74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1E8EC91DD4440F00FAE74B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0A1E8ECB1DD52B2000FAE74B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		0A1E8ECD1DD5314200FAE74B /* CustomPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		248128EDC6AB960D17E7AB42 /* Pods-swift-scroll-pages-with-transition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-scroll-pages-with-transition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition.debug.xcconfig"; sourceTree = "<group>"; };
 		B7443DA38123D1F85D3069BF /* Pods-swift-scroll-pages-with-transition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-scroll-pages-with-transition.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition.release.xcconfig"; sourceTree = "<group>"; };
 		FF4119200BDB901F73D703E0 /* Pods_swift_scroll_pages_with_transition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_scroll_pages_with_transition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,8 @@
 				0A1E8EC01DD43CE000FAE74B /* LaunchScreen.storyboard */,
 				0A1E8EC31DD43CE000FAE74B /* Info.plist */,
 				0A1E8EC91DD4440F00FAE74B /* Extensions.swift */,
+				0A1E8ECB1DD52B2000FAE74B /* ContentViewController.swift */,
+				0A1E8ECD1DD5314200FAE74B /* CustomPageViewController.swift */,
 			);
 			path = "swift-scroll-pages-with-transition";
 			sourceTree = "<group>";
@@ -209,8 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1E8ECC1DD52B2000FAE74B /* ContentViewController.swift in Sources */,
 				0A1E8EBA1DD43CDF00FAE74B /* ViewController.swift in Sources */,
 				0A1E8ECA1DD4440F00FAE74B /* Extensions.swift in Sources */,
+				0A1E8ECE1DD5314200FAE74B /* CustomPageViewController.swift in Sources */,
 				0A1E8EB81DD43CDF00FAE74B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

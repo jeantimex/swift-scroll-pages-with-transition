@@ -9,69 +9,75 @@
 import UIKit
 import Cartography
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIPageViewControllerDataSource {
     
-    var scrollView = UIScrollView()
-    var pageCount: Int = 3
+    var pageViewController = CustomPageViewController()
     var pageColors = [0x54ACD2, 0xFBA026, 0x61BD6D]
-    var pageControl = UIPageControl()
+    var pageCount: Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configScrollView()
-        configPageControl()
-    }
-    
-    func configScrollView() {
-        let pageWidth = view.frame.width
-        let pageHeight = view.frame.height
-        
-        for i in 0 ..< pageCount {
-            let pageView: UIView = UIView(frame: CGRect(x: pageWidth * CGFloat(i), y: 0, width: pageWidth, height: pageHeight))
-            
-            pageView.backgroundColor = UIColor.init(hex: pageColors[i])
-            scrollView.addSubview(pageView)
-        }
-        
-        scrollView.frame = view.frame
-        scrollView.contentSize.width = view.frame.width * CGFloat(pageCount)
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.isPagingEnabled = true
-        scrollView.delegate = self
-        
         view.backgroundColor = UIColor.white
-        view.addSubview(scrollView)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = Int(pageNumber)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
-    }
-    
-    func configPageControl() {
-        pageControl.numberOfPages = pageCount
-        pageControl.currentPage = 0
-        pageControl.tintColor = UIColor.red
-        pageControl.pageIndicatorTintColor = UIColor.black
-        pageControl.currentPageIndicatorTintColor = UIColor.green
-        pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControlEvents.valueChanged)
         
-        view.addSubview(pageControl)
+        configPageViewController()
+    }
+    
+    func configPageViewController() {
+        pageViewController.dataSource = self
         
-        constrain(pageControl, view) { pageControl, view in
-            pageControl.centerX == view.centerX
-            pageControl.bottom == view.bottom - 80
+        let startViewController: ContentViewController = viewControllerAtIndex(index: 0)
+        let viewControllers = [startViewController]
+        
+        pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
+        
+        pageViewController.view.frame = view.frame
+     
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
+    }
+    
+    func viewControllerAtIndex(index: Int) -> ContentViewController {
+        if (pageCount == 0 || index >= pageCount) {
+            return ContentViewController()
         }
+        
+        let vc: ContentViewController = ContentViewController()
+        vc.pageIndex = index
+        vc.pageColor = pageColors[index]
+        
+        return vc
     }
     
-    func changePage(sender: AnyObject) -> () {
-        let x = CGFloat(pageControl.currentPage) * scrollView.frame.size.width
-        scrollView.setContentOffset(CGPoint(x: x,y :0), animated: true)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let vc: ContentViewController = viewController as! ContentViewController
+        let index: Int = vc.pageIndex
+        
+        if (index == 0 || index == NSNotFound) {
+            return nil
+        }
+        
+        return viewControllerAtIndex(index: index - 1)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let vc: ContentViewController = viewController as! ContentViewController
+        let index: Int = vc.pageIndex
+        
+        if (index == NSNotFound || index == pageCount - 1) {
+            return nil
+        }
+        
+        return self.viewControllerAtIndex(index: index + 1)
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pageCount
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 
 }
