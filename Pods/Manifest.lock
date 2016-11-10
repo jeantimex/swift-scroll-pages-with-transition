@@ -1,0 +1,12 @@
+PODS:
+  - Cartography (1.0.1)
+
+DEPENDENCIES:
+  - Cartography (= 1.0.1)
+
+SPEC CHECKSUMS:
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+
+PODFILE CHECKSUM: 6bc035b2ce754407c189bf1f88558f3a3b24ac7f
+
+COCOAPODS: 1.1.0.rc.2

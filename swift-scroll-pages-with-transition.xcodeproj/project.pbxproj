@@ -12,6 +12,7 @@
 		0A1E8EBF1DD43CE000FAE74B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E8EBE1DD43CE000FAE74B /* Assets.xcassets */; };
 		0A1E8EC21DD43CE000FAE74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E8EC01DD43CE000FAE74B /* LaunchScreen.storyboard */; };
 		0A1E8ECA1DD4440F00FAE74B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E8EC91DD4440F00FAE74B /* Extensions.swift */; };
+		4CBC491CD024F7604CF83185 /* Pods_swift_scroll_pages_with_transition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4119200BDB901F73D703E0 /* Pods_swift_scroll_pages_with_transition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0A1E8EC11DD43CE000FAE74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1E8EC31DD43CE000FAE74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1E8EC91DD4440F00FAE74B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		248128EDC6AB960D17E7AB42 /* Pods-swift-scroll-pages-with-transition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-scroll-pages-with-transition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition.debug.xcconfig"; sourceTree = "<group>"; };
+		B7443DA38123D1F85D3069BF /* Pods-swift-scroll-pages-with-transition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-scroll-pages-with-transition.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition.release.xcconfig"; sourceTree = "<group>"; };
+		FF4119200BDB901F73D703E0 /* Pods_swift_scroll_pages_with_transition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_scroll_pages_with_transition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBC491CD024F7604CF83185 /* Pods_swift_scroll_pages_with_transition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0A1E8EB61DD43CDF00FAE74B /* swift-scroll-pages-with-transition */,
 				0A1E8EB51DD43CDF00FAE74B /* Products */,
+				EDE4760B16D410099E5F13FE /* Pods */,
+				3B8CA00E3615ED7513087235 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "swift-scroll-pages-with-transition";
 			sourceTree = "<group>";
 		};
+		3B8CA00E3615ED7513087235 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF4119200BDB901F73D703E0 /* Pods_swift_scroll_pages_with_transition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDE4760B16D410099E5F13FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				248128EDC6AB960D17E7AB42 /* Pods-swift-scroll-pages-with-transition.debug.xcconfig */,
+				B7443DA38123D1F85D3069BF /* Pods-swift-scroll-pages-with-transition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A1E8EC61DD43CE000FAE74B /* Build configuration list for PBXNativeTarget "swift-scroll-pages-with-transition" */;
 			buildPhases = (
+				133B2679003ED074325E9BA6 /* [CP] Check Pods Manifest.lock */,
 				0A1E8EB01DD43CDF00FAE74B /* Sources */,
 				0A1E8EB11DD43CDF00FAE74B /* Frameworks */,
 				0A1E8EB21DD43CDF00FAE74B /* Resources */,
+				0679AF0272BF990ADACAF0F2 /* [CP] Embed Pods Frameworks */,
+				8923BF588068F1836D244BA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0679AF0272BF990ADACAF0F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		133B2679003ED074325E9BA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8923BF588068F1836D244BA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-scroll-pages-with-transition/Pods-swift-scroll-pages-with-transition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A1E8EB01DD43CDF00FAE74B /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		0A1E8EC71DD43CE000FAE74B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 248128EDC6AB960D17E7AB42 /* Pods-swift-scroll-pages-with-transition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "swift-scroll-pages-with-transition/Info.plist";
@@ -261,6 +337,7 @@
 		};
 		0A1E8EC81DD43CE000FAE74B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7443DA38123D1F85D3069BF /* Pods-swift-scroll-pages-with-transition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "swift-scroll-pages-with-transition/Info.plist";

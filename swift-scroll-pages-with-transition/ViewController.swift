@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cartography
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
@@ -58,10 +59,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         pageControl.tintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
         pageControl.currentPageIndicatorTintColor = UIColor.green
-        pageControl.frame = CGRect(x: 50, y: 300, width: 200, height: 50)
         pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControlEvents.valueChanged)
         
         view.addSubview(pageControl)
+        
+        constrain(pageControl, view) { pageControl, view in
+            pageControl.centerX == view.centerX
+            pageControl.bottom == view.bottom - 80
+        }
     }
     
     func changePage(sender: AnyObject) -> () {
