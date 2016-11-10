@@ -48,6 +48,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = Int(pageNumber)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+    }
+    
     func configPageControl() {
         pageControl.numberOfPages = pageCount
         pageControl.currentPage = 0
