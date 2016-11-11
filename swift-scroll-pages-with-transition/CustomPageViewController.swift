@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CustomPageViewControllerDelegate: UIPageViewControllerDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+}
+
 class CustomPageViewController: UIPageViewController {
     
     override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {
@@ -21,21 +25,23 @@ class CustomPageViewController: UIPageViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        var scrollView: UIScrollView? = nil
-        var pageControl: UIPageControl? = nil
+        let scrollView = view.subviews.filter { $0 is UIScrollView }.first as? UIScrollView
+        scrollView?.frame = view.bounds
+        scrollView?.delegate = self
         
-        for view in view.subviews {
-            if view is UIScrollView {
-                scrollView = view as? UIScrollView
-            }
-            else if view is UIPageControl {
-                pageControl = view as? UIPageControl
-            }
-        }
-        
-        if (scrollView != nil && pageControl != nil) {
-            scrollView?.frame = view.bounds
+        let pageControl = view.subviews.filter { $0 is UIPageControl }.first as? UIPageControl
+        if (pageControl != nil) {
             view.bringSubview(toFront: pageControl!)
+        }
+    }
+    
+}
+
+extension CustomPageViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let delegate: CustomPageViewControllerDelegate = self.delegate as? CustomPageViewControllerDelegate {
+            delegate.scrollViewDidScroll(scrollView)
         }
     }
     

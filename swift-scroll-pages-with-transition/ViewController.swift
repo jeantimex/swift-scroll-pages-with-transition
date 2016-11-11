@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Cartography
 
-class ViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController {
     
     var pageViewController = CustomPageViewController()
     var pageColors = [0x54ACD2, 0xFBA026, 0x61BD6D]
@@ -30,8 +29,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         let viewControllers = [startViewController]
         
         pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
-        
         pageViewController.view.frame = view.frame
+        pageViewController.delegate = self
      
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
@@ -49,6 +48,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         
         return vc
     }
+
+}
+
+extension ViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let vc: ContentViewController = viewController as! ContentViewController
@@ -79,6 +82,14 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
+    
+}
 
+extension ViewController: CustomPageViewControllerDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+    }
+    
 }
 
